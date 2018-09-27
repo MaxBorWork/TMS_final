@@ -1,0 +1,108 @@
+body h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header-panel {
+    margin: 30px 0;
+    border-bottom: 1px solid #000;
+}
+.header-menu {
+    text-align: center;
+}
+.header-menu ul {
+    display: -webkit-box;
+    display: inline-flex;
+    list-style-type: none;
+}
+.header-menu ul li {
+    margin: 0 30px;
+}
+.header-menu ul li a, .header-panel .header-title a {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+.header-panel .header-title {
+    margin-top: -15px;
+}
+.header-panel .header-title a {
+    font-size: 32px;
+}
+.header-menu ul li a:focus, .header-menu ul li a:hover,
+.header-panel .header-title a:focus, .header-panel .header-title a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+.main-container {
+    min-height: 400px;
+}
+.book-view {
+    margin-bottom: 40px;
+}
+.book-image {
+    text-align: center;
+}
+.book-image img {
+    max-height: 300px;
+}
+.book-prev-info h3 {
+    font-weight: 600;
+}
+.main-container form {
+    text-align: center;
+    font-size: 16px;
+    margin: 40px 0;
+    width: 50%;
+    margin-left: 25%;
+}
+.main-container form table td {
+    padding: 0 15px 15px 0px;
+}
+.main-container form table td label {
+    margin-bottom: 0;
+}
+.main-container form table td button {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    padding: 6px 12px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+.main-container form table td input {
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin-left: 9%;
+}
+footer {
+    background-color: #000000;
+    color: #ffffff;
+}
+.footer-title {
+    margin: 15px 0;
+}
+.footer-title a {
+    text-align: center;
+    color: #ffffff;
+}
+.footer-title a:hover, .footer-title a:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer-menu {
+    margin: 15px 0;
+}
+.footer-menu ul {
+    list-style-type: none;
+}
+.footer-menu ul li a {
+    color: #ffffff;
+    font-size: 16px;
+}
+.footer-menu ul li a:hover, .footer-menu ul li a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
