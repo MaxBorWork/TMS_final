@@ -22,6 +22,22 @@
                     <p>${book.bookDescription}</p>
                 </div>
             </div>
+            <div class="col-sm-6 col-sm-offset-3 download-book">
+                <ul>
+                    <li><c:if test="${book.bookFileFb != ''}">
+                            <a href="/resources/files/${book.bookFileFb}" download class="download-book-item">
+                        </c:if>FB2</a></li>
+                    <li><c:if test="${book.bookFileEpub != ''}">
+                        <a href="/resources/files/${book.bookFileEpub}" download class="download-book-item">
+                            </c:if>ePub</a></li>
+                    <li><c:if test="${book.bookFilePdf != ''}">
+                        <a href="/resources/files/${book.bookFilePdf}" download class="download-book-item">
+                            </c:if>PDF</a></li>
+                    <li><c:if test="${book.bookFileTxt != ''}">
+                        <a href="/resources/files/${book.bookFileTxt}" download class="download-book-item">
+                            </c:if>TXT</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 

@@ -21,7 +21,7 @@
                         <img src="/resources/images/${book.bookImageLink}" alt="">
                     </div>
                     <div class="col-sm-7 book-prev-info">
-                        <h3>${book.bookTitle}</h3>
+                        <h3><a href="/${book.bookID}">${book.bookTitle}</a></h3>
                         <h4>${book.bookAuthor}</h4>
                         <p>${book.bookDescription}</p>
                     </div>

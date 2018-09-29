@@ -26,7 +26,8 @@ public class AddBookController {
     }
 
     @RequestMapping(value = "/addingProcess", method = RequestMethod.POST)
-    public String addBookInfo(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("book") Book book) {
+    public String addBookInfo(HttpServletRequest request, HttpServletResponse response,
+                              @ModelAttribute("book") Book book) {
         bookService.addBook(book);
         return "home";
     }

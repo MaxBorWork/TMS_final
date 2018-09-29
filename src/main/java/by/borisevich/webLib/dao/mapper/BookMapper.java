@@ -18,6 +18,10 @@ public class BookMapper implements RowMapper<Book> {
         book.setYearOfPublish(resultSet.getInt("year_of_publish"));
         book.setBookDescription(resultSet.getString("description"));
         book.setBookImageLink(resultSet.getString("image_link"));
+        book.setBookFileFb(resultSet.getString("fb2_file"));
+        book.setBookFileEpub(resultSet.getString("epub_file"));
+        book.setBookFilePdf(resultSet.getString("pdf_file"));
+        book.setBookFileTxt(resultSet.getString("txt_file"));
         return book;
     }
 }

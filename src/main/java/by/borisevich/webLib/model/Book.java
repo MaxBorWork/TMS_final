@@ -10,18 +10,26 @@ public class Book {
     private int yearOfPublish;
     private String bookDescription;
     private String bookImageLink;
+    private String bookFileFb;
+    private String bookFileEpub;
+    private String bookFilePdf;
+    private String bookFileTxt;
 
-    public Book(int id, String bookTitle, String bookID, String bookCategoryName, String bookAuthor,
-                int yearOfPublish, String bookDescription, String bookImageLink) {
+    public Book(int id, String bookID, String bookTitle, String bookCategoryName, String bookAuthor,
+                int yearOfPublish, String bookDescription, String bookImageLink,
+                String bookFileFb, String bookFileEpub, String bookFilePdf, String bookFileTxt) {
         this.id = id;
-        this.bookTitle = bookTitle;
         this.bookID = bookID;
+        this.bookTitle = bookTitle;
         this.bookCategoryName = bookCategoryName;
-
         this.bookAuthor = bookAuthor;
         this.yearOfPublish = yearOfPublish;
         this.bookDescription = bookDescription;
         this.bookImageLink = bookImageLink;
+        this.bookFileFb = bookFileFb;
+        this.bookFileEpub = bookFileEpub;
+        this.bookFilePdf = bookFilePdf;
+        this.bookFileTxt = bookFileTxt;
     }
 
     public Book() {
@@ -89,5 +97,37 @@ public class Book {
 
     public void setBookImageLink(String bookImageLink) {
         this.bookImageLink = bookImageLink;
+    }
+
+    public String getBookFileFb() {
+        return bookFileFb;
+    }
+
+    public void setBookFileFb(String bookFileFb) {
+        this.bookFileFb = bookFileFb;
+    }
+
+    public String getBookFileEpub() {
+        return bookFileEpub;
+    }
+
+    public void setBookFileEpub(String bookFileEpub) {
+        this.bookFileEpub = bookFileEpub;
+    }
+
+    public String getBookFilePdf() {
+        return bookFilePdf;
+    }
+
+    public void setBookFilePdf(String bookFilePdf) {
+        this.bookFilePdf = bookFilePdf;
+    }
+
+    public String getBookFileTxt() {
+        return bookFileTxt;
+    }
+
+    public void setBookFileTxt(String bookFileTxt) {
+        this.bookFileTxt = bookFileTxt;
     }
 }

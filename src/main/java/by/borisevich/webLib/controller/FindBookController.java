@@ -28,19 +28,14 @@ public class FindBookController {
     @RequestMapping(value = "/findingProcess", method = RequestMethod.POST)
     public ModelAndView showBook(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("book") Book book) {
         ModelAndView modelAndView = null;
-        Book foundBbook = bookService.getBookByTitle(book.getBookTitle());
+        Book foundBook = bookService.getBookByTitle(book.getBookTitle());
 
-        if (foundBbook != null) {
+        if (foundBook != null) {
             modelAndView = new ModelAndView("bookPage");
-            modelAndView.addObject("bookImage", foundBbook.getBookImageLink());
-            modelAndView.addObject("bookTitle", foundBbook.getBookTitle());
-            modelAndView.addObject("bookAuthor", foundBbook.getBookAuthor());
-            modelAndView.addObject("bookYear", foundBbook.getYearOfPublish());
-            modelAndView.addObject("bookDescription", foundBbook.getBookDescription());
+            modelAndView.addObject("book", foundBook);
         }
         else {
-            modelAndView = new ModelAndView("errorPage");
-            modelAndView.addObject("message", "No books were found");
+            modelAndView = new ModelAndView("404errorPage");
         }
         return modelAndView;
     }

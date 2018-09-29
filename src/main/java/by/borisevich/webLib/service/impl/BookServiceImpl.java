@@ -29,4 +29,10 @@ public class BookServiceImpl implements BookService {
         return bookDao.getBookByTitle(bookTitle);
     }
 
+    @Override
+    public Book getBookByBookID(String bookID) {
+        return bookDao.getBookByBookID(bookID);
+    }
+
+
 }

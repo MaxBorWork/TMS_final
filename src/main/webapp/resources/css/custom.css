@@ -6,18 +6,16 @@ body h1 {
     margin: 30px 0;
     border-bottom: 1px solid #000;
 }
-.header-menu {
-    text-align: center;
-}
-.header-menu ul {
+.header-menu ul, .header-user-settings ul, .download-book ul {
     display: -webkit-box;
     display: inline-flex;
     list-style-type: none;
 }
-.header-menu ul li {
-    margin: 0 30px;
+.header-menu ul li, .header-user-settings ul li, .download-book ul li {
+    margin: 0 20px;
 }
-.header-menu ul li a, .header-panel .header-title a {
+.header-menu ul li a, .header-panel .header-title a,
+.header-user-settings ul li a, .download-book ul li a, .download-book ul li {
     color: #000000;
     font-size: 18px;
     font-weight: 600;
@@ -29,12 +27,14 @@ body h1 {
     font-size: 32px;
 }
 .header-menu ul li a:focus, .header-menu ul li a:hover,
-.header-panel .header-title a:focus, .header-panel .header-title a:hover {
+.header-panel .header-title a:focus, .header-panel .header-title a:hover,
+.header-user-settings ul li a:focus, .header-user-settings ul li a:hover,
+.book-prev-info h3 a:focus, .book-prev-info h3 a:hover {
     color: #000000;
     text-decoration: none;
 }
 .main-container {
-    min-height: 400px;
+    min-height: 600px;
 }
 .book-view {
     margin-bottom: 40px;
@@ -48,6 +48,9 @@ body h1 {
 .book-prev-info h3 {
     font-weight: 600;
 }
+.book-prev-info h3 a {
+    color: #000000;
+}
 .main-container form {
     text-align: center;
     font-size: 16px;
@@ -56,7 +59,7 @@ body h1 {
     margin-left: 25%;
 }
 .main-container form table td {
-    padding: 0 15px 15px 0px;
+    padding: 0 15px 15px 0;
 }
 .main-container form table td label {
     margin-bottom: 0;
@@ -105,4 +108,30 @@ footer {
     color: #ffffff;
     text-decoration: underline;
 }
-
+.error-page-container {
+    margin-top: 40px;
+    text-align: center;
+}
+.error-page-container .error-text .error-title {
+    font-size: 48px;
+}
+.error-page-container .error-text p {
+    font-style: italic;
+    font-size: 24px;
+    margin-top: 40px;
+}
+.download-book {
+    margin-top: 40px;
+    border: 3px solid #000;
+    text-align: center;
+    height: 50px;
+}
+.download-book ul {
+    padding-top: 2%;
+}
+.download-book ul li a:first-child {
+    margin-left: 0;
+}
+.download-book ul li a:focus, .download-book ul li a:hover {
+    color: #000000;
+}

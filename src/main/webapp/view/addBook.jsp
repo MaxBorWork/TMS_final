@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <form:label path="bookAuthor">BookAuthor</form:label>
+                        <form:label path="bookAuthor">Book Author</form:label>
                     </td>
                     <td>
                         <form:input path="bookAuthor" name="bookAuthor" id="bookAuthor"
@@ -53,7 +53,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <form:label path="yearOfPublish">BookYear</form:label>
+                        <form:label path="yearOfPublish">Book Year</form:label>
                     </td>
                     <td>
                         <form:input path="yearOfPublish" name="yearOfPublish" id="yearOfPublish"
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <form:label path="bookDescription">BookDescription</form:label>
+                        <form:label path="bookDescription">Book Description</form:label>
                     </td>
                     <td>
                         <form:input path="bookDescription" name="bookDescription" id="bookDescription"
@@ -71,11 +71,47 @@
                 </tr>
                 <tr>
                     <td>
-                        <form:label path="bookImageLink">BookImage</form:label>
+                        <form:label path="bookImageLink">Book Image</form:label>
                     </td>
                     <td>
                         <form:input path="bookImageLink" name="bookImageLink" id="bookImageLink"
                                     placeholder="Input book image link"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form:label path="bookFileFb">Book FB2 file</form:label>
+                    </td>
+                    <td>
+                        <form:input path="bookFileFb" name="bookFileFb" id="bookFileFb"
+                                    placeholder="Input book FB2 file link"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form:label path="bookFileEpub">Book ePub file</form:label>
+                    </td>
+                    <td>
+                        <form:input path="bookFileEpub" name="bookFileEpub" id="bookFileEpub"
+                                    placeholder="Input book ePub file link"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form:label path="bookFilePdf">Book PDF file</form:label>
+                    </td>
+                    <td>
+                        <form:input path="bookFilePdf" name="bookFilePdf" id="bookFilePdf"
+                                    placeholder="Input book PDF file link"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form:label path="bookFileTxt">Book TXT file</form:label>
+                    </td>
+                    <td>
+                        <form:input path="bookFileTxt" name="bookFileTxt" id="bookFileTxt"
+                                    placeholder="Input book TXT file link"/>
                     </td>
                 </tr>
                 <tr>

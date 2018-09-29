@@ -21,14 +21,21 @@ public class BookDaoImpl implements BookDao {
             "year_of_publish int(10)," +
             "description text," +
             "image_link varchar(2083)," +
+            "fb2_file varchar(2083)," +
+            "epub_file varchar(2083)," +
+            "pdf_file varchar(2083)," +
+            "txt_file varchar(2083)," +
             "PRIMARY KEY (ID)" +
             ");";
 
-    private static final String SQL_INSERT_BOOK_INFO = "INSERT INTO book_info VALUES(?,?,?,?,?,?,?,?)";
+    private static final String SQL_INSERT_BOOK_INFO = "INSERT INTO book_info " +
+            "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
     private static final String SQL_SELECT_ALL_BOOKS = "SELECT * FROM book_info";
 
     private static final String SQL_SELECT_BOOK_BY_TITLE = "SELECT * FROM book_info WHERE title=?";
+
+    private static final String SQL_SELECT_BOOK_BY_BOOK_ID = "SELECT * FROM book_info WHERE book_id=?";
 
     private static Logger log = LoggerFactory.getLogger(BookDaoImpl.class);
 
@@ -50,7 +57,11 @@ public class BookDaoImpl implements BookDao {
             book.getBookAuthor(),
             book.getYearOfPublish(),
             book.getBookDescription(),
-            book.getBookImageLink()
+            book.getBookImageLink(),
+            book.getBookFileFb(),
+            book.getBookFileEpub(),
+            book.getBookFilePdf(),
+            book.getBookFileTxt()
         });
     }
 
@@ -63,6 +74,17 @@ public class BookDaoImpl implements BookDao {
     public Book getBookByTitle(String bookTitle) {
         try {
             Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_TITLE, new Object[] {bookTitle}, new BookMapper());
+            return book;
+        } catch  (Exception e) {
+            log.info("no book was found");
+            return null;
+        }
+    }
+
+    @Override
+    public Book getBookByBookID(String bookID) {
+        try {
+            Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_BOOK_ID, new Object[] {bookID}, new BookMapper());
             return book;
         } catch  (Exception e) {
             log.info("no book was found");

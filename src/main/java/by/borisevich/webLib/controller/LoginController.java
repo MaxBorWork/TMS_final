@@ -5,6 +5,7 @@ import by.borisevich.webLib.model.User;
 import by.borisevich.webLib.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,24 +23,21 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView getLoginInfo(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("login");
-        modelAndView.addObject("login");
+        modelAndView.addObject("login", new Login());
         return modelAndView;
     }
 
     @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-    public ModelAndView confirmInfo(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") Login login) {
-        ModelAndView modelAndView = null;
+    public String confirmInfo(Model model, @ModelAttribute("login") Login login) {
 
         User user = userService.loginUser(login);
 
         if (user != null) {
-            modelAndView = new ModelAndView("login");
-            modelAndView.addObject("successLogin", "Log in sucessfully!");
+            model.addAttribute("successLogin", "Log in sucessfully!");
+            return "home";
         } else  {
-            modelAndView = new ModelAndView("login");
-            modelAndView.addObject("message", "Username or Password is wrong!");
+            model.addAttribute("message", "Username or Password is wrong!");
+            return "login";
         }
-
-        return modelAndView;
     }
 }
