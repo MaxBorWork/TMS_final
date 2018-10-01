@@ -18,12 +18,21 @@
                         <img src="/resources/images/${book.bookImageLink}" alt="">
                     </div>
                     <div class="col-sm-7 book-prev-info">
-                        <h3>${book.bookTitle}</h3>
+                        <h3><a href="/${book.bookID}">${book.bookTitle}</a></h3>
                         <h4>${book.bookAuthor}</h4>
                         <p>${book.bookDescription}</p>
+                        <%  if (session.getAttribute("login") != null) {
+                            Login login = (Login) session.getAttribute("login");
+                            if (login.getUsername() != null && login.getUsername().equals("admin")) {%>
+                        <span><a href="<c:url value='/editBook/${book.id}' />" >Edit</a></span>
+                        <span><a href="<c:url value='/removeBook/${book.id}' />" >Delete</a></span>
+                        <%}}%>
                     </div>
                 </div>
             </c:forEach>
+            <div class="col-sm-12 noBooks">
+                <c:if test="${noBooks != null}">${noBooks}</c:if>
+            </div>
         </div>
     </div>
 

@@ -23,6 +23,10 @@
                 </div>
             </div>
             <div class="col-sm-6 col-sm-offset-3 download-book">
+                <%  if (session.getAttribute("login") != null) {
+                    Login login = (Login) session.getAttribute("login");
+                    if (login.getUsername() != null && login.getPassword() != null)
+                    {%>
                 <ul>
                     <li><c:if test="${book.bookFileFb != ''}">
                             <a href="/resources/files/${book.bookFileFb}" download class="download-book-item">
@@ -37,6 +41,10 @@
                         <a href="/resources/files/${book.bookFileTxt}" download class="download-book-item">
                             </c:if>TXT</a></li>
                 </ul>
+                <% }
+                } else { %>
+                    <p>Please, log in to download books.</p>
+                <% }%>
             </div>
         </div>
     </div>

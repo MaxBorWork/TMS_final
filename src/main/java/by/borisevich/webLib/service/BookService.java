@@ -13,4 +13,10 @@ public interface BookService {
     Book getBookByTitle(String bookTitle);
 
     Book getBookByBookID(String bookID);
+
+    Book getBookByID(int id);
+
+    void updateBook(Book book);
+
+    void deleteBook(int id);
 }

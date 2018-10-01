@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface BookDao {
 
-    void createTable();
-
     void addBook(Book book);
 
     List<Book> getBookList();
@@ -15,4 +13,10 @@ public interface BookDao {
     Book getBookByTitle(String bookTitle);
 
     Book getBookByBookID(String bookID);
+
+    Book getBookByID(int id);
+
+    void updateBook(Book book);
+
+    void deleteBook(int id);
 }

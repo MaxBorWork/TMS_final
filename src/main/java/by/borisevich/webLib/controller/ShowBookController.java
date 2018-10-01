@@ -25,7 +25,11 @@ public class ShowBookController {
     public ModelAndView showBooks(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("listBooks");
         List<Book> books =  bookService.getBookList();
-        modelAndView.addObject("books", books);
+        if (books.size() > 0) {
+            modelAndView.addObject("books", books);
+        } else {
+            modelAndView.addObject("noBooks", "No books were found");
+        }
         return modelAndView;
     }
 

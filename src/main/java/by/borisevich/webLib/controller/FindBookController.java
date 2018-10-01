@@ -35,7 +35,8 @@ public class FindBookController {
             modelAndView.addObject("book", foundBook);
         }
         else {
-            modelAndView = new ModelAndView("404errorPage");
+            modelAndView = new ModelAndView("findBook");
+            modelAndView.addObject("noBooks", "No books were found");
         }
         return modelAndView;
     }

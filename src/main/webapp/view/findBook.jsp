@@ -22,7 +22,9 @@
             </tr>
         </table>
     </form:form>
-
+        <div class="col-sm-12 noBooks">
+            <c:if test="${noBooks != null}">${noBooks}</c:if>
+        </div>
     </div>
 </div>
     <%@ include file="/view/footer.jsp" %>

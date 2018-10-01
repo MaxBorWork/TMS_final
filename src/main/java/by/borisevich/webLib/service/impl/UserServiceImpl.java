@@ -7,6 +7,7 @@ import by.borisevich.webLib.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -23,5 +24,15 @@ public class UserServiceImpl implements UserService {
     public User loginUser(Login login) {
 
         return userDao.loginUser(login);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        userDao.deleteUser(id);
+    }
+
+    @Override
+    public List<User> getUserList() {
+        return userDao.getUserList();
     }
 }

@@ -52,6 +52,10 @@
                 </tr>
             </table>
         </form:form>
+
+        <div class="register-success">
+            <c:if test="${successRegistration != null}">${successRegistration}</c:if>
+        </div>
     </div>
 </div>
 <%@ include file="/view/footer.jsp" %>
