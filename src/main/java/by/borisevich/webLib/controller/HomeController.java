@@ -21,8 +21,6 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showBooksOnStart() {
-//        model.addAttribute("book", new Book());
-//        model.addAttribute("booksList", bookService.getBookList());
         return "home";
     }
 

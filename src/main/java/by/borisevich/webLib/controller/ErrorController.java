@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class ErrorController {
 
-    Logger log = LoggerFactory.getLogger(ErrorController.class);
+    private Logger log = LoggerFactory.getLogger(ErrorController.class);
 
     @RequestMapping(value = "errors", method = RequestMethod.GET)
     public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {

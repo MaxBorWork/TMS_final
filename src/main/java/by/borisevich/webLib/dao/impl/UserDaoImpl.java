@@ -16,29 +16,20 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    private static final String SQL_CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS users (" +
-            "id int NOT NULL AUTO_INCREMENT," +
-            "username varchar(255) NOT NULL," +
-            "password varchar(255) NOT NULL," +
-            "userEmail varchar(2083)," +
-            "userCountry varchar(255)," +
-            "PRIMARY KEY (ID)" +
-            ");";
-
-    private static final String SQL_INSERT_USER = "INSERT INTO users VALUES(?,?,?,?,?)";
+    private static final String SQL_INSERT_USER = "INSERT INTO User VALUES(?,?,?,?,?)";
 
     private static final String SQL_SELECT_ALL_USERS = "SELECT " +
-            "id, username, password, userEmail, userCountry FROM users";
+            "id, username, password, userEmail, userCountry FROM User";
 
     private static final String SQL_SELECT_USERS_BY_USERNAME_PASSWORD = "SELECT " +
-            "id, username, password, userEmail, userCountry FROM users " +
+            "id, username, password, userEmail, userCountry FROM User " +
             "WHERE username=? AND password=?";
 
     private static final String SQL_SELECT_USERS_BY_ID = "SELECT " +
-            "id, username, password, userEmail, userCountry FROM users " +
+            "id, username, password, userEmail, userCountry FROM User " +
             "WHERE id=?";
 
-    private static final String SQL_DELETE_USER = "DELETE FROM users WHERE id =?";
+    private static final String SQL_DELETE_USER = "DELETE FROM User WHERE id =?";
 
     private static Logger log = LoggerFactory.getLogger(BookDaoImpl.class);
 

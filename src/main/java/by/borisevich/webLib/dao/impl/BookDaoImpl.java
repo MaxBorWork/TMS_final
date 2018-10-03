@@ -14,46 +14,30 @@ import java.util.List;
 
 public class BookDaoImpl implements BookDao {
 
-    private static final String SQL_CREATE_TABLE_BOOK_INFO = "CREATE TABLE IF NOT EXISTS book_info (" +
-            "id int NOT NULL AUTO_INCREMENT," +
-            "book_id varchar(255) NOT NULL," +
-            "title varchar(255) NOT NULL," +
-            "category varchar(255)," +
-            "author varchar(255)," +
-            "year_of_publish int(10)," +
-            "description text," +
-            "image_link varchar(2083)," +
-            "fb2_file varchar(2083)," +
-            "epub_file varchar(2083)," +
-            "pdf_file varchar(2083)," +
-            "txt_file varchar(2083)," +
-            "PRIMARY KEY (ID)" +
-            ");";
-
-    private static final String SQL_INSERT_BOOK_INFO = "INSERT INTO book_info " +
+    private static final String SQL_INSERT_BOOK_INFO = "INSERT INTO Book " +
             "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
     private static final String SQL_SELECT_ALL_BOOKS = "SELECT id, book_id, title, category, " +
             "author, year_of_publish, description, image_link, " +
-            "fb2_file, epub_file, pdf_file, txt_file FROM book_info";
+            "fb2_file, epub_file, pdf_file, txt_file FROM Book";
 
     private static final String SQL_SELECT_BOOK_BY_ID = "SELECT id, book_id, title, category, " +
             "author, year_of_publish, description, image_link, " +
-            "fb2_file, epub_file, pdf_file, txt_file FROM book_info WHERE id=?";
+            "fb2_file, epub_file, pdf_file, txt_file FROM Book WHERE id=?";
 
     private static final String SQL_SELECT_BOOK_BY_TITLE = "SELECT id, book_id, title, category, " +
             "author, year_of_publish, description, image_link, " +
-            "fb2_file, epub_file, pdf_file, txt_file FROM book_info WHERE title=?";
+            "fb2_file, epub_file, pdf_file, txt_file FROM Book WHERE title=?";
 
     private static final String SQL_SELECT_BOOK_BY_BOOK_ID = "SELECT id, book_id, title, category, " +
             "author, year_of_publish, description, image_link, " +
-            "fb2_file, epub_file, pdf_file, txt_file FROM book_info WHERE book_id=?";
+            "fb2_file, epub_file, pdf_file, txt_file FROM Book WHERE book_id=?";
 
-    private static final String SQL_UPDATE_BOOK = "UPDATE book_info SET " +
+    private static final String SQL_UPDATE_BOOK = "UPDATE Book SET " +
             "book_id=?, title=?, category=?, author=?, year_of_publish=?, description=?, image_link=?, " +
             "fb2_file=?, epub_file=?, pdf_file=?, txt_file=? WHERE id=?";
 
-    private static final String SQL_DELETE_BOOK_BY_ID = "DELETE FROM book_info WHERE id=?";
+    private static final String SQL_DELETE_BOOK_BY_ID = "DELETE FROM Book WHERE id=?";
 
     private static Logger log = LoggerFactory.getLogger(BookDaoImpl.class);
 
@@ -87,7 +71,8 @@ public class BookDaoImpl implements BookDao {
     @Override
     public Book getBookByTitle(String bookTitle) {
         try {
-            Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_TITLE, new Object[] {bookTitle}, new BookMapper());
+            Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_TITLE, new Object[] {bookTitle},
+                                                    new BookMapper());
             return book;
         } catch  (Exception e) {
             log.info("no book was found, caution: " + e);
@@ -98,7 +83,8 @@ public class BookDaoImpl implements BookDao {
     @Override
     public Book getBookByBookID(String bookID) {
         try {
-            Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_BOOK_ID, new Object[] {bookID}, new BookMapper());
+            Book book = jdbcTemplate.queryForObject(SQL_SELECT_BOOK_BY_BOOK_ID, new Object[] {bookID},
+                                                    new BookMapper());
             return book;
         } catch  (Exception e) {
             log.info("no book was found, caution: " + e);

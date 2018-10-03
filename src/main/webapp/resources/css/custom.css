@@ -42,29 +42,6 @@ body h1 {
 .header-panel .header-title a {
     font-size: 32px;
 }
-/*ul.menu > li.book-admin > a {*/
-    /*display: block;*/
-    /*padding: 10px;*/
-    /*padding-top: 0;*/
-    /*color: #000000;*/
-    /*text-decoration: none;*/
-/*}*/
-/*ul.submenu {*/
-    /*display: none;*/
-    /*position: absolute;*/
-    /*width: 80px;*/
-    /*margin-left: -10px;*/
-    /*padding: 0;*/
-    /*background-color: white;*/
-    /*border: 1px solid #000000;*/
-/*}*/
-/*ul.submenu > li {*/
-    /*display: block;*/
-    /*margin: 0;*/
-/*}*/
-/*ul.menu > li.book-admin:hover > ul.submenu {*/
-    /*display: block;*/
-/*}*/
 .main-container {
     min-height: 600px;
 }
@@ -195,7 +172,7 @@ footer {
     font-weight: 600;
     text-decoration: none;
 }
-.noBooks {
+.noBooks, .register-success, .login-error {
     text-align: center;
     color: #000000;
     font-size: 18px;

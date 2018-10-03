@@ -34,7 +34,6 @@ public class LoginController {
         User user = userService.loginUser(login);
 
         if (user != null) {
-            model.addAttribute("successLogin", "Log in sucessfully!");
             return "redirect:/listBooks";
         } else  {
             model.addAttribute("message", "Username or Password is wrong!");

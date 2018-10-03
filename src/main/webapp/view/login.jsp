@@ -36,14 +36,9 @@
                 </tr>
             </table>
         </form:form>
-        <table align="center">
-            <tr>
-                <td style="font-size: 16px; font-style: italic; color: #000000;">
-                    <c:if test="${message != null}">${message}</c:if>
-                    <c:if test="${successLogin != null}">${successLogin}</c:if>
-                </td>
-            </tr>
-        </table>
+        <div class="login-error">
+            <c:if test="${message != null}">${message}</c:if>
+        </div>
     </div>
 </div>
 

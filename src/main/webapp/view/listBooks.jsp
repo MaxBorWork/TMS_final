@@ -24,7 +24,6 @@
                         <%  if (session.getAttribute("login") != null) {
                             Login login = (Login) session.getAttribute("login");
                             if (login.getUsername() != null && login.getUsername().equals("admin")) {%>
-                        <span><a href="<c:url value='/editBook/${book.id}' />" >Edit</a></span>
                         <span><a href="<c:url value='/removeBook/${book.id}' />" >Delete</a></span>
                         <%}}%>
                     </div>

@@ -14,14 +14,9 @@
                     login.getPassword() != null && login.getPassword().equals("123")) {%>
                         <li><a href="showUsers">Show users</a></li>
                         <li class="book-admin"><a href="<c:url value='/addBook' />">Add book</a></li>
-                            <%--<ul class="submenu">--%>
-                                <%--<li><a href="addBook">Add</a></li>--%>
-                                <%--<li><a href="updateBook">Update</a></li>--%>
-                                <%--<li><a href="deleteBook">Delete</a></li>--%>
-                            <%--</ul>--%>
                     <%}}%>
                     <li><a href="<c:url value='/findBook' />">Find book</a></li>
-                    <li><a href="<c:url value='/listBooks' />">Show book</a></li>
+                    <li><a href="<c:url value='/listBooks' />">Show books</a></li>
                 </ul>
             </div>
             <div class="header-user-settings col-sm-offset-1 col-sm-3">

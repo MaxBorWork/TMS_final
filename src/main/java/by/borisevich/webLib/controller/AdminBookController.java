@@ -22,7 +22,7 @@ public class AdminBookController {
 
     @RequestMapping(value = "/addBook", method = RequestMethod.GET)
     public ModelAndView getBookInfo(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView modelAndView = new ModelAndView("addBook");
+        ModelAndView modelAndView = new ModelAndView("addBookPage");
         modelAndView.addObject("book", new Book());
         return modelAndView;
     }
@@ -30,15 +30,12 @@ public class AdminBookController {
     @RequestMapping(value = "/addingProcess", method = RequestMethod.POST)
     public String addBookInfo(HttpServletRequest request, HttpServletResponse response,
                               @ModelAttribute("book") Book book) {
-        bookService.addBook(book);
+        if (book.getId() == 0) {
+            bookService.addBook(book);
+        } else {
+            bookService.updateBook(book);
+        }
         return "redirect:/listBooks";
-    }
-
-    @RequestMapping(value = "/editBook/{id}")
-    public String editPerson(@PathVariable("id") int id, Model model) {
-        Book book = bookService.getBookByID(id);
-        model.addAttribute("book", new Book());
-        return "person";
     }
 
     @RequestMapping(value = "/removeBook/{id}")
